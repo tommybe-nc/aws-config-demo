@@ -1,0 +1,24 @@
+stage: "PROD"
+apache_1:
+  number_of_nodes: 2
+  instance_type : "t3.medium"
+  disk_size: "20"
+  volume_type: "gp3"
+  tags:
+    name: "ApacheWebserver"
+    status: "Green"
+    schedule: "cron(0 6 ? * MON-FRI *)"
+    appname: "Nordcloud-Web" 
+    release: "1.0"
+apache_2:
+  number_of_nodes: 0
+  instance_type : "t3.medium"
+  disk_size: "20"
+  volume_type: "gp2"
+  tags:
+    name: "ApacheWebserver"
+    status: "Blue"
+    schedule: "cron(0 6 ? * MON-FRI *)"
+    appname: "Nordcloud-Web" 
+    release: "0.1"
+    
