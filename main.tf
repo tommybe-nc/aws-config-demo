@@ -20,7 +20,7 @@ resource "aws_instance" "apache_1" {
 
   ebs_block_device {
     delete_on_termination = false
-    device_name           = "/dev/sbd"
+    device_name           = "/dev/sdb"
     volume_type           = module.config.settings.apache_1.volume_type
     volume_size           = module.config.settings.apache_1.disk_size
   }
@@ -49,7 +49,7 @@ resource "aws_instance" "apache_2" {
 
   ebs_block_device {
     delete_on_termination = false
-    device_name           = "/dev/sbd"
+    device_name           = "/dev/sdb"
     volume_type           = module.config.settings.apache_2.volume_type
     volume_size           = module.config.settings.apache_2.disk_size
   }
